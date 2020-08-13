@@ -25,27 +25,6 @@ class CarController {
             }
     
     }
-
-    public function deleteCar($id) {
-       $carsManager = new CarsManager();
-       $carsManager->deleteOneCar($id);
-       header('location: index.php');
-    }
-
-    public function detailCar($id) {
-        $carsManager = new CarsManager();
-        $car = $carsManager->getOneCar($id);
-        require_once('view\cardetail_view.php');
-    }
-
-    private function checkIsAuto(){
-        if($_POST['isAuto'] === 'Auto') {
-            $_POST['isAuto'] = 1;
-        } else {
-            $_POST['isAuto'] = 0; 
-        }
-
-    }
     private function checkform() {
         $errors = [];
         if(empty($_POST['marque'])) {
@@ -66,6 +45,28 @@ class CarController {
         foreach ($errors as $error) {
             echo($error);
         }
+    }
+
+
+    public function deleteCar($id) {
+       $carsManager = new CarsManager();
+       $carsManager->deleteOneCar($id);
+       header('location: index.php');
+    }
+
+    public function detailCar($id) {
+        $carsManager = new CarsManager();
+        $car = $carsManager->getOneCar($id);
+        require_once('view\cardetail_view.php');
+    }
+
+    private function checkIsAuto(){
+        if($_POST['isAuto'] === 'Auto') {
+            $_POST['isAuto'] = 1;
+        } else {
+            $_POST['isAuto'] = 0; 
+        }
+
     }
 
 

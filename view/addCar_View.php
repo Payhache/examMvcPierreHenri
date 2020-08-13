@@ -18,24 +18,21 @@
 <form class="w-75 m-auto" action="index.php?controller=car&action=postCar" method="post">
         <div class="form-group mt-5">
             <label for="marque">Marque de la voiture</label>
-            <input class="form-control w-75" type="text" name="marque" value="
-            <?php
+            <input class="form-control w-75" type="text" name="marque" value="<?php
             if (!empty($_POST)) {
                 echo $_POST['marque'];
             } ?>">
         </div>
         <div class="form-group">
             <label for="modele">Modele de la voiture</label>
-            <input class="form-control w-75" type="textarea" name="modele" value="
-            <?php
+            <input class="form-control w-75" type="textarea" name="modele" value="<?php
             if (!empty($_POST)) {
                 echo $_POST['modele'];
             } ?>">
         </div>
         <div class="form-group">
             <label for="energy"> Motorisation</label>
-            <input class="form-control w-75" type="textarea" name="energy" value="
-            <?php
+            <input class="form-control w-75" type="textarea" name="energy" value="<?php
             if (!empty($_POST)) {
                 echo $_POST['energy'];
             } ?>">
