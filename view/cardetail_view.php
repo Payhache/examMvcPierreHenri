@@ -2,29 +2,25 @@
         include_once('view\parts\header.html');
 ?>
 
+
+<h1>Detail de la voiture</h1>
+
 <table class="table w-75 m-auto">
     <thead>
     <td> # </td>
     <td>Marque</td>
     <td>Modele</td>
-    <td>Action</td>
+    <td> Type de boîte</td>
+    <td>Photo</td>
     </thead>
 
     <tbody>
-    <?php
-    foreach ($cars as $car) {
-        ?>
         <tr>
             <td><?php echo $car->getId()?></td>
             <td><?php echo $car->getMarque()?></td>
             <td><?php echo $car->getModele()?></td>
-            <td>
-                <a href="index.php?controller=car&action=detail&id=<?php echo $car->getId();?>"> voir le détail</a>
-                <a href="index.php?controller=car&action=delete&id=<?php echo $car->getId();?>"> supprimer </a>
-            </td>
+            <td><?php echo $car->getIsAuto()?></td>
+            <td><?php echo $car->getPicture()?></td>
         </tr>
-        <?php
-    }
-    ?>
     </tbody>
 </table>
