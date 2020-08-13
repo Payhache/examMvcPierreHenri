@@ -36,15 +36,16 @@ class CarController {
         if(empty($_POST['energy'])) {
             $errors[] = '- vous devez renseigner la motorisation';
         }
-
-
         return $errors;
     }
 
     public function displayErrors($errors) {
+        echo('<h2> Erreurs dans le formulaire </h2>
+        <ol>');
         foreach ($errors as $error) {
-            echo($error);
+            echo('<li>' . $error . '</li>');
         }
+        echo('</ol>');
     }
 
 
